@@ -3,6 +3,9 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:singlevendorormultivendorapp/Search/search.dart';
+
+import '../Home/home.dart';
 
 // ignore: must_be_immutable
 class bottomNavigation extends StatefulWidget {
@@ -19,14 +22,8 @@ class _bottomNavigationState extends State<bottomNavigation> {
   Widget build(BuildContext context) {
     // TODO: implement build
     List<Widget> myList = const [
-      Text(
-        "Home",
-        style: TextStyle(fontSize: 40),
-      ),
-      Text(
-        "Search",
-        style: TextStyle(fontSize: 40),
-      ),
+      home(),
+      search(),
       Text(
         "Like",
         style: TextStyle(fontSize: 40),
@@ -43,7 +40,7 @@ class _bottomNavigationState extends State<bottomNavigation> {
         //params
         child: Icon(Icons.add),
       ),
-      body:  Center(
+      body: Center(
         child: myList[_currentIndex],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
